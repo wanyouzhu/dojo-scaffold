@@ -12,20 +12,24 @@ public class FizzBuzzReportTest {
 
     @Test
     void should_report_fizz_for_turn_3() {
-        assertThat(getReportLines()[3 - 1]).isEqualTo("Fizz");
+        assertThat(getReportLine(3)).isEqualTo("Fizz");
     }
 
     @Test
     void should_report_buzz_for_turn_5() {
-        assertThat(getReportLines()[5 - 1]).isEqualTo("Buzz");
+        assertThat(getReportLine(5)).isEqualTo("Buzz");
     }
 
     @Test
     void should_report_fizz_buzz_for_turn_15() {
-        assertThat(getReportLines()[15 - 1]).isEqualTo("FizzBuzz");
+        assertThat(getReportLine(15)).isEqualTo("FizzBuzz");
     }
 
     private String[] getReportLines() {
         return new FizzBuzzReport().report().split("\n");
+    }
+
+    private String getReportLine(int lineNumber) {
+        return getReportLines()[lineNumber - 1];
     }
 }
