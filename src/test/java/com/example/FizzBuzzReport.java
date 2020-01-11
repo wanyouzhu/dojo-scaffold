@@ -9,10 +9,18 @@ public class FizzBuzzReport {
     }
 
     private String lineForTurn(int turn) {
-        if (isDividableBy(turn, 3) && isDividableBy(turn, 5)) return "FizzBuzz";
-        if (isDividableBy(turn, 3)) return "Fizz";
-        if (isDividableBy(turn, 5)) return "Buzz";
+        if (isFizz(turn) && isBuzz(turn)) return "FizzBuzz";
+        if (isFizz(turn)) return "Fizz";
+        if (isBuzz(turn)) return "Buzz";
         return String.valueOf(turn);
+    }
+
+    private boolean isBuzz(int turn) {
+        return isDividableBy(turn, 5);
+    }
+
+    private boolean isFizz(int turn) {
+        return isDividableBy(turn, 3);
     }
 
     private boolean isDividableBy(int turn, int i) {
