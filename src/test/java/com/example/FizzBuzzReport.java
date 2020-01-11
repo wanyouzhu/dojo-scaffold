@@ -9,6 +9,7 @@ public class FizzBuzzReport {
     }
 
     private String lineForTurn(int turn) {
+        if (turn % 3 == 0 && turn % 5 == 0) return "FizzBuzz";
         if (turn % 3 == 0) return "Fizz";
         if (turn % 5 == 0) return "Buzz";
         return String.valueOf(turn);

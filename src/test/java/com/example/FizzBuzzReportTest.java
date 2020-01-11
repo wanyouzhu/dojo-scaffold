@@ -20,6 +20,11 @@ public class FizzBuzzReportTest {
         assertThat(getReportLines()[5 - 1]).isEqualTo("Buzz");
     }
 
+    @Test
+    void should_report_fizz_buzz_for_turn_15() {
+        assertThat(getReportLines()[15 - 1]).isEqualTo("FizzBuzz");
+    }
+
     private String[] getReportLines() {
         return new FizzBuzzReport().report().split("\n");
     }
