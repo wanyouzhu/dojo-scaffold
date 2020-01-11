@@ -15,12 +15,16 @@ public class FizzBuzzReport {
         return String.valueOf(turn);
     }
 
-    private boolean isBuzz(int turn) {
-        return isDividableBy(turn, 5);
+    private boolean isFizz(int turn) {
+        return isDividableBy(turn, 3) || contains(turn, 3);
     }
 
-    private boolean isFizz(int turn) {
-        return isDividableBy(turn, 3);
+    private boolean contains(int turn, int n) {
+        return String.valueOf(turn).contains(String.valueOf(n));
+    }
+
+    private boolean isBuzz(int turn) {
+        return isDividableBy(turn, 5);
     }
 
     private boolean isDividableBy(int turn, int i) {
